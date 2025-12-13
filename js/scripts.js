@@ -19,18 +19,22 @@ function addTask() {
   }
 
   const listItem = document.createElement("li");
-  listItem.innerHTML = `
-            <span>${taskText}</span>
-            <button class="delete-btn">❌</button>
-        `;
 
-  listItem.addEventListener("click", (event) => {
-    if (!event.target.classList.contains("delete-btn")) {
-      listItem.classList.toggle("completed");
-    }
+  const taskTextSpan = document.createElement("span");
+  taskTextSpan.innerText = taskText;
+  taskTextSpan.classList.add("task-text-content");
+
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("delete-btn");
+  deleteButton.innerHTML = "❌";
+
+  listItem.appendChild(taskTextSpan);
+  listItem.appendChild(deleteButton);
+
+  taskTextSpan.addEventListener("click", () => {
+    taskTextSpan.classList.toggle("completed");
   });
 
-  const deleteButton = listItem.querySelector(".delete-btn");
   deleteButton.addEventListener("click", () => {
     taskList.removeChild(listItem);
   });
@@ -38,4 +42,5 @@ function addTask() {
   taskList.appendChild(listItem);
 
   taskInput.value = "";
+  taskInput.focus();
 }
