@@ -80,6 +80,10 @@ h1 {
   flex: 1;
   cursor: pointer;
   padding: 10px 0 10px 8px;
+
+  max-width: 400px;
+  overflow: overlay;
+  /* text-overflow: ellipsis; */
 }
 
 .delete-btn {
