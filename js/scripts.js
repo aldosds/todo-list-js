@@ -20,18 +20,23 @@ function addTask() {
 
   const listItem = document.createElement("li");
 
-  const taskTextSpan = document.createElement("span");
+  const taskTextSpan = document.createElement("p");
   taskTextSpan.innerText = taskText;
   taskTextSpan.classList.add("task-text-content");
+
+  const checkedButton = document.createElement("button");
+  checkedButton.classList.add("checked-btn");
+  checkedButton.innerHTML = "✅";
 
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-btn");
   deleteButton.innerHTML = "❌";
 
   listItem.appendChild(taskTextSpan);
+  listItem.appendChild(checkedButton);
   listItem.appendChild(deleteButton);
 
-  taskTextSpan.addEventListener("click", () => {
+  checkedButton.addEventListener("click", () => {
     taskTextSpan.classList.toggle("completed");
   });
 
