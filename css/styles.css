@@ -67,7 +67,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   transition: background-color 0.3s;
 }
 
@@ -78,13 +77,13 @@ h1 {
 
 .task-text-content {
   flex: 1;
-  cursor: pointer;
   padding: 10px 0 10px 8px;
 
   max-width: 400px;
   overflow: hidden;
 }
 
+.checked-btn,
 .delete-btn {
   background: none;
   border: none;
