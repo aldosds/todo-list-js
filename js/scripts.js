@@ -20,9 +20,9 @@ function addTask() {
 
   const listItem = document.createElement("li");
 
-  const taskTextSpan = document.createElement("p");
-  taskTextSpan.innerText = taskText;
-  taskTextSpan.classList.add("task-text-content");
+  const taskTextP = document.createElement("p");
+  taskTextP.innerText = taskText;
+  taskTextP.classList.add("task-text-content");
 
   const checkedButton = document.createElement("button");
   checkedButton.classList.add("checked-btn");
@@ -32,12 +32,12 @@ function addTask() {
   deleteButton.classList.add("delete-btn");
   deleteButton.innerHTML = "❌";
 
-  listItem.appendChild(taskTextSpan);
+  listItem.appendChild(taskTextP);
   listItem.appendChild(checkedButton);
   listItem.appendChild(deleteButton);
 
   checkedButton.addEventListener("click", () => {
-    taskTextSpan.classList.toggle("completed");
+    taskTextP.classList.toggle("completed");
   });
 
   deleteButton.addEventListener("click", () => {
