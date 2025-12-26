@@ -10,6 +10,14 @@ taskInput.addEventListener("keypress", (event) => {
   }
 });
 
+const toggleTask = (taskTextP) => {
+  taskTextP.classList.toggle("completed");
+};
+
+const deleteTask = (listItem) => {
+  taskList.removeChild(listItem);
+};
+
 function addTask() {
   const taskText = taskInput.value.trim();
 
@@ -37,11 +45,13 @@ function addTask() {
   listItem.appendChild(deleteButton);
 
   checkedButton.addEventListener("click", () => {
-    taskTextP.classList.toggle("completed");
+    // taskTextP.classList.toggle("completed");
+    toggleTask(taskTextP);
   });
 
   deleteButton.addEventListener("click", () => {
-    taskList.removeChild(listItem);
+    // taskList.removeChild(listItem);
+    deleteTask(listItem);
   });
 
   taskList.appendChild(listItem);
